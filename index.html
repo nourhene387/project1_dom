@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online store </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <body>
+
+        <header class="header">
+            <nav class="navbar">
+                <img src="th.jpg" alt="logo">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--hero section -->
+        <section id="Hero" class="text-center">
+            <div>
+                <h1 style="font-size:30px;"><strong> NEW ARRIVALS</strong> </h1>
+                <p style="color: brown; font-size:30px;"> We are pleased to announce that the Roue Carree timepiece from
+                    Maurice Lacroix
+                    will be officially unveiled for the first time in France at the forthcoming Salon Belles Montres.
+                </p>
+                <button class="button-9" type="button"> Shop Now</button>
+
+            </div>
+
+        </section>
+        <!--main-->
+        <main id="main">
+            <!--poduct1-->
+            <div class="product" data-price="400" class="product">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71jlXw8LSLL.jpg" alt="men's Watches"
+                    width="266">
+                <div class="product_info">
+                    <h2> LADIES' WATCHES</h2>
+                    <h4 class="price">400DT</h4>
+                    <div id="button">
+                        <button class="decrementBtn" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="quantity">0</span>
+                        <button class="incrementBtn" onclick="updateQuantity(this, +1)">+</button>
+                    </div>
+                    <button class="deleteButton"> delete</button>
+
+
+
+                    <div class="product_icons">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-code-compare"></i>
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!--poduct2-->
+            <div class="product" class="product">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.uARvL9w3MshTIF5rZEKBHQHaFA&pid=Api&P=0&h=180"
+                    alt="ladies Watches" width="266">
+                <div class="product_info">
+                    <h2> LADIES' WATCHES</h2>
+                    <h4 class="price">400DT</h4>
+                    <div id="button">
+                        <button class="decrementBtn" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="quantity">0</span>
+                        <button class="incrementBtn" onclick="updateQuantity(this, +1)">+</button>
+                    </div>
+                    <button class="deleteButton" onclick="deleteItems"> delete</button>
+                    <div class="product_icons">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-code-compare"></i>
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+            <!--poduct3-->
+            <div class="product" class="product">
+                <img src="https://cdn1.jolicloset.com/img4/full/2019/12/161229-1.jpg" alt="ladies bag" width="266">
+                <div class="product_info">
+                    <h2> LADIES' WATCHES</h2>
+                    <h4 class="price">80DT</h4>
+                    <div id="button">
+                        <button class="decrementBtn" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="quantity">0</span>
+                        <button class="incrementBtn" onclick="updateQuantity(this, +1)">+</button>
+                    </div>
+                    <button class="deleteButton"> delete</button>
+
+
+                    <div class="product_icons">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-code-compare"></i>
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+            <!--poduct 4-->
+            <div class="product" class="product">
+                <img src="https://alexnld.com/wp-content/uploads/2018/07/f16ff8b1-171b-4400-8139-569fb0e0f931.jpg"
+                    alt="men's bag" width="266">
+                <div class="product_info">
+                    <h2> men's WATCHES</h2>
+                    <h4 class="price">100DT</h4>
+                    <div id="button">
+                        <button class="decrementBtn" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="quantity">0</span>
+                        <button class="incrementBtn" onclick="updateQuantity(this, -1)">+</button>
+                    </div>
+                    <button id="deleteButton3"> delete</button>
+
+                    <div class="product_icons">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-code-compare"></i>
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+
+                </div>
+        </main>
+
+
+        <div class="total-price">Total: DT<span id="total">0</span></div>
+
+        <footer class="footer">
+            <p>Copyright ©2024 All rights reserved</p>
+        </footer>
+        <!--<script src="script.js"> </script>-->
+        <script>
+            /* var quantityvaleur = document.getElementById("quantity").innerHTML; console.log(input)
+             function clickinc(input) {
+ 
+                 quantityvaleur++; console.log(quantityvaleur);
+                 quantity.innerHTML =quantityvaleur; // Met à jour l'élément avec la nouvelle valeur
+                 console.log(inquantityvaleur); // Affiche la nouvelle valeur dans la console
+             }*/
+            function updateTotalPrice() {
+                let total = 0;
+
+                // Iterate through each product to calculate the total
+                document.querySelectorAll('.product').forEach(product => {
+                    var quantityElement = product.querySelector('.quantity');
+                    var quantityValue = parseInt(quantityElement.innerHTML) ; // Ensure it's a number
+                    var priceElement = product.querySelector('.price');
+                    var priceValue = parseInt(priceElement.innerHTML) ; // Ensure it's a number
+
+                    total += priceValue * quantityValue; // Calculate total
+                });
+
+                // Update the total price display
+                document.getElementById('total').innerHTML = total;console.log(total)// Update the total in the HTML
+            }
+
+            function updateQuantity(button, change) {
+                var quantityElement = button.parentElement.querySelector('.quantity');
+                var quantityValue = parseInt(quantityElement.innerHTML);
+                quantityValue += change;
+
+                // Ensure quantity does not go below 0
+                if (quantityValue < 0) {
+                    quantityValue = 0;
+                }
+
+                quantityElement.innerHTML = quantityValue; // Update the displayed quantity
+                console.log(quantityValue); // Log the new quantity value
+                updateTotalPrice()
+            }
+
+            /*decrementation*/
+
+            /* function clickdec() {
+                 if (quantityValue > 0) {
+                     quantityValue--;
+                 }
+                 el.innerHTML = quantityValue; // Met à jour l'élément avec la nouvelle valeur
+                 console.log(quantityValue);
+             }
+ 
+             $(document).ready(function () {
+                 $("#deleteButton").click(function () {
+                     $("#product1").remove(); // Changez l'ID selon l'élément à supprimer
+                 });
+             });*/
+
+
+            $(document).ready(function () {
+                $(".deleteButton").click(function () {
+                    $(this).closest('.product').remove(); // Remove the closest product element
+                    updateTotalPrice()
+                });
+               
+            });
+            /*
+
+            $(document).ready(function () {
+                $("#deleteButton1").click(function () {
+                    $("#product2").remove(); // Changez l'ID selon l'élément à supprimer
+                });
+            });
+            $(document).ready(function () {
+                $("#deleteButton2").click(function () {
+                    $("#product3").remove(); // Changez l'ID selon l'élément à supprimer
+                });
+            });
+                   $(document).ready(function () {
+                $("#deleteButton3").click(function () {
+                    $("#product4").remove(); // Changez l'ID selon l'élément à supprimer
+                });
+            });*/
+
+
+
+        </script>
+
+
+    </body>
+
+</html>
